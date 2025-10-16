@@ -129,3 +129,22 @@ section img {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(255, 91, 127, 0.5);
 }
+#hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap; /* así en pantallas pequeñas se apila */
+  text-align: left;
+}
+
+.hero__content {
+  flex: 1 1 400px;
+  min-width: 300px;
+}
+
+.hero_img {
+  flex: 1 1 400px;
+  min-width: 300px;
+  border-radius: 16px;
+}
