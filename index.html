@@ -7,22 +7,45 @@
     <link rel="stylesheet" href="estils.css">
 </head>
 <body>
-    <header class="lloc_header">
-        <div class="topbar">
-            <nav class="main_nav">
-                <div class="container">
-                    <a class="links_nav" href="https://www.pixelmator.com/pro/" target="_blank"><img src="./imatges/exerciciPixelmator/ico_pixelamtor-pro-2.0@2x.png" width="32" height="32" alt=""><span>Pixelmator Pro</span></a>
-                    <a class="links_nav" href="https://www.pixelmator.com/photomator/" target="_blank"><img src="./imatges/exerciciPixelmator/" alt=""><img src="./imatges/exerciciPixelmator/icon-photomator-v1.png" width="32" height="32" alt=""><span>Photomator</span></a>
-                    <a class="links_nav" href="https://www.pixelmator.com/blog/"><span>Blog</span></a>
-                    <a class="links_nav" href="https://support.pixelmator.com/"><span>Support</span></a>
-                </div>
-            </nav>
-        </div>    
-    
-    </header>
+<header class="lloc_header" role="banner">
+  <!-- Top en flujo normal (se pierde al scroll) -->
+  <div id="topbar" class="header__top">
+    <nav class="main_nav">
+      <div class="container header__top-inner">
+        <a class="links_nav topmenu__item topmenu__item--active" href="https://www.pixelmator.com/pro/" target="_blank" rel="noopener">
+          <span>Pixelmator Pro</span>
+        </a>
+        <a class="links_nav topmenu__item" href="https://www.pixelmator.com/photomator/" target="_blank" rel="noopener"><span>Photomator</span></a>
+        <a class="links_nav topmenu__item" href="https://www.pixelmator.com/blog/" target="_blank" rel="noopener"><span>Blog</span></a>
+        <a class="links_nav topmenu__item" href="https://support.pixelmator.com/" target="_blank" rel="noopener"><span>Support</span></a>
+      </div>
+    </nav>
+    <div class="header__top-underline" aria-hidden="true"></div>
+  </div>
+
+  <!-- Barra sticky con glass -->
+  <div id="navbar" class="header__nav glass sticky">
+    <div class="container header__nav-inner">
+      <div class="brand">
+        <img class="brand__logo" src="./imatges/exerciciPixelmator/ico_pixelamtor-pro-2.0@2x.png" width="28" height="28" alt="Pixelmator Pro logo">
+        <span class="brand__name">Pixelmator Pro 3.7</span>
+      </div>
+      <nav class="navlinks" aria-label="Secondary navigation">
+        <a class="navlinks__item navlinks__item--muted" href="https://www.pixelmator.com/pro/">
+            <span>Overview</span></a>
+        <a class="navlinks__item" href="https://www.pixelmator.com/pro/tech-specs/"><span>Tech Specs</span></a>
+        <a class="navlinks__item" href="https://support.pixelmator.com/pixelmator-pro-user-guide/"><span>User Guide</span></a>
+      </nav>
+      <div class="navcta">
+        <a class="btn btn--buy" href="https://apps.apple.com/us/app/pixelmator-pro/id1289583905?mt=12&ls=" target="_blank" rel="noopener">Buy</a>
+      </div>
+    </div>
+  </div>
+</header>
+
 <main>
 <section id="hero"><h1>Professional image editing tools that anyone can use.</h1>
-        <img src="./imatges/exerciciPixelmator/img_hero@2x.png" alt="">
+        <img src="./imatges/exerciciPixelmator/img_hero@2x.png" alt="" class="hero_img">
         <p>Pixelmator Pro is an image editor designed to make the most powerful professional image editing tools accessible to everyone. And with an extensive collection of tools for editing and retouching photos, creating graphic designs, painting, drawing vector graphics, and adding stunning effects, it’s the only image editor you’ll need.</p>    
     </section>
     <button class="button_1section" >Buy now</button>
@@ -357,7 +380,7 @@
     <img src="./imatges/exerciciPixelmator/ico_pixelamtor-pro-2.0@2x.png" alt="">
     <h1>Pixelmator Pro</h1>
     <p>Available on the Mac App Store for $49.99.</p>
-    <button type="button">Buy now</button>
+    <button type="button" class="btn btn--buy">Buy now</button>
 </section>
 </main>
 <footer></footer>
