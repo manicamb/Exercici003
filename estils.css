@@ -93,3 +93,22 @@ span{
   width: min(100%, 900px);     /* tope máximo de 900px o lo que prefieras */
   height: auto;                /* mantiene proporción */
 }
+section {
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+section h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+section p {
+  text-align: center;
+  color: var(--muted);
+  max-width: 800px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
