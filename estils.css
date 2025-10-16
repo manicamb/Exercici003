@@ -148,3 +148,22 @@ section img {
   min-width: 300px;
   border-radius: 16px;
 }
+.site-footer {
+  background: var(--hairline);
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.site-footer a {
+  color: var(--text);
+  opacity: 0.8;
+  text-decoration: none;
+  margin: 0 4px;
+}
+
+.site-footer a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
