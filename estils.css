@@ -7,19 +7,15 @@ html, body{ height:100%; margin:0; padding:0; overflow: visible !important; }
 
 
 :root{
-  --text:#eaeaf0;
-  --muted:#b7b8c0;
-  --bg:#ffffff;
-  --hairline: rgba(255,255,255,.08);
-  --buy:#ff6b8a;
-  --webkit-backdrop-filter: blur();
-
-
-  /* autocenter */
-  --container-max:1264px;
-  --gutter:24px;
+  --text:#f2f2f2;
+  --muted:#b5b5b5;
+  --bg:#0a0a0a;
+  --hairline: rgba(255,255,255,0.1);
+  --buy:#ff5b7f;
+  --webkit-backdrop-filter: blur(12px);
 }
-@media (prefers-color-scheme: light){
+
+
   :root{
     --text:#111;
     --muted:#666;
@@ -27,7 +23,7 @@ html, body{ height:100%; margin:0; padding:0; overflow: visible !important; }
     --hairline: rgba(0,0,0,.08);
     --buy:#ff5b7f;
   }
-}
+
 
 
 body{ background:var(--bg); color:var(--text); font:16px/1.45 system-ui,-apple-system,"Inter","SF Pro Text",Segoe UI,Roboto,Arial,sans-serif; }
@@ -166,4 +162,9 @@ section img {
 .site-footer a:hover {
   opacity: 1;
   text-decoration: underline;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+  font:16px/1.45 system-ui,-apple-system,"Inter","SF Pro Text",Segoe UI,Roboto,Arial,sans-serif;
 }
