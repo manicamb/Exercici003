@@ -120,3 +120,12 @@ section img {
   max-width: 100%;
   height: auto;
 }
+.btn--buy {
+  box-shadow: 0 4px 12px rgba(255, 91, 127, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn--buy:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 91, 127, 0.5);
+}
