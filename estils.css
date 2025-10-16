@@ -32,7 +32,13 @@ body{ background:var(--bg); color:var(--text); font:16px/1.45 system-ui,-apple-s
 
 
 .header__top{ background:var(--bg); position:relative; align-items: center; width:100%; }
-.header__top-inner{ position: sticky; display:flex; align-items:center; gap:32px; min-height:54px; }
+.header__top-inner{
+  position: relative; /* o simplemente elimina la propiedad position */
+  display:flex;
+  align-items:center;
+  gap:32px;
+  min-height:54px;
+}
 .header__top-underline{ height:1px; background:var(--hairline); width:100%; }
 .topmenu__item{ display:inline-flex; align-items:center; gap:8px; color:var(--text); opacity:.92; padding:12px 0; }
 .topmenu__item--active{ font-weight:600; position:relative; }
@@ -49,13 +55,13 @@ navbar{
     display: flex;
     align-items: center;
 }
-
 .header__nav.sticky{
   position: sticky;
   top: 0;
   z-index: 1000;
   width: 100%;
 }
+
 
 .header__nav.glass{
   background:
@@ -167,4 +173,47 @@ body {
   background: var(--bg);
   color: var(--text);
   font:16px/1.45 system-ui,-apple-system,"Inter","SF Pro Text",Segoe UI,Roboto,Arial,sans-serif;
+}
+#vector_tools,
+#photo_tools,
+#mac-technologies {
+  background-color: #0a0a0a;
+}
+#vector_tools h1,
+#photo_tools h1,
+#mac-technologies h1 {
+  color: #ffffff;
+}
+#vector_tools p,
+#photo_tools p,
+#mac-technologies p {
+  color: #ffffff;
+}
+
+
+#photo_tools{background-color: #0a0a0a;}
+#effects{
+  background-color: #b5b5b5;
+}
+
+
+#awards{
+  background-color: #b5b5b5;
+  
+}
+:root{
+  --topbar-h: 56px; /* pon aquí la altura real de tu topbar */
+}
+
+/* Hace que el topbar “se vaya” hacia arriba al scrollear */
+#topbar{
+  position: relative;   /* flujo normal, scrollea y desaparece */
+  z-index: 10;
+}
+/* El navbar queda fijo arriba cuando llega */
+#navbar{
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #fff; /* asegúrate de tapar el contenido debajo */
 }
