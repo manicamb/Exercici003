@@ -8,7 +8,7 @@
 </head>
 <body>
 <header class="lloc_header" role="banner">
-  <!-- Top en flujo normal (se pierde al scroll) -->
+  
   <div id="topbar" class="header__top">
     <nav class="main_nav">
       <div class="container header__top-inner">
@@ -23,7 +23,7 @@
     <div class="header__top-underline" aria-hidden="true"></div>
   </div>
 
-  <!-- Barra sticky con glass -->
+  
   <div id="navbar" class="header__nav glass sticky">
     <div class="container header__nav-inner">
       <div class="brand">
@@ -45,150 +45,186 @@
 
 <main>
 <section id="hero">
-  <div class="hero__content">
-    <h1>Professional image editing tools that anyone can use.</h1>
-
-    <p class="vector_tools">
-      Pixelmator Pro is an image editor designed to make the most powerful
-      professional image editing tools accessible to everyone...
-    </p>
-
-    <button class="btn btn--buy">Buy now</button>
-  </div>
-
-  <img
-    src="./imatges/exerciciPixelmator/img_hero@2x.png"
-    alt="Pixelmator Pro main image"
-    class="hero_img"
-  />
-</section>
-
-    <button class="button_1section" >Buy now</button>
+  <div class="contenedor_texto"><h1 class="diseño_titulo">Professional image editing tools that anyone can use.</h1></div>
+        <img src="./imatges/exerciciPixelmator/img_hero@2x.png" alt="" class="hero_img">
+        <div class="contenedor_texto">
+        <p>Pixelmator Pro is an image editor designed to make the most powerful professional image editing tools accessible to everyone. And with an extensive collection of tools for editing and retouching photos, creating graphic designs, painting, drawing vector graphics, and adding stunning effects, it’s the only image editor you’ll need.</p></div>    
+        <button class="button_1section" >Buy now</button>   
+      </section>
+    
 <section id="vector_tools">
-    <h1 class="titol_vector_tools">Draw and illustrate with a full collection of vector tools.</h1>
+  <div class="contenedor_texto">
+  <h1 class="diseño_titulo_white">Draw and illustrate with a full collection of vector tools.</h1>
     <p>Pixelmator Pro comes with a full set of vector tools for creating resolution-independent designs. It includes easily-customizable smart shapes, a large collection of pre-designed shapes, and support for vector file formats including PSD, SVG, PDF, Adobe Illustrator, and Illustrator EPS.</p>
-    <img src="./imatges/exerciciPixelmator/img_draw@2x.png" alt="">
+  </div>
+    <img class="imagen_draw" src="./imatges/exerciciPixelmator/img_draw@2x.png" alt="">
+    <article class="box">
     <div class="resolution-independent">
-        <h1>Resolution Independent</h1>
+        <h2>Resolution Independent</h2>
         <p>Vector shapes are resolution-independent, so curves always look smooth and edges always stay sharp, no matter how much you resize each shape or even entire vector designs.</p>
+        <div class="media">
         <img src="./imatges/exerciciPixelmator/img_draw-resolution-independent@2x.jpg" alt="">
+        </div>
     </div>
+    
     <div class="vector_support">
-        <h1>Vector Support</h1>
+        <h2>Vector Support</h2>
         <p>Pixelmator Pro supports vector file formats, including PSD, SVG, PDF, Adobe Illustrator, and Illustrator EPS, so you can effortlessly edit shapes and paths in these files, and export them while keeping all their vector data.</p>
         <img src="./imatges/exerciciPixelmator/ico_vector-support@2x.png" alt="">
     </div>
-    <div class="Smart_shapes">
-        <h1>Smart Shapes</h1>
+    
+    <div class="smart_card">
+      <div class="smart_text">
+        <h2>Smart Shapes</h2>
         <p>With a collection of pre-made Smart Shapes, you can quickly add star and various polygon shapes, arrows, speech bubbles, and other shapes to your compositions, then customize them in any way you want.</p>
-        <video class="vector_video">
-            <source src="./imatges/exerciciPixelmator/video_smart-shapes.mp4" type="mp4">
+        </div>
+        <video class="vector_video" autoplay muted loop playsinline>
+            <source src="./imatges/exerciciPixelmator/video_smart-shapes.mp4" type="video/mp4">
         </video>
     </div>
+    </article>
 </section>
 <section id="photo_tools">
-    <h1>Powerful tools for perfecting your photos</h1>
+  <div class="contenedor_texto">
+    <h1 class="diseño_titulo_white">Powerfull tools for perfecting your photos</h1>
     <p>The collection of powerful, nondestructive color adjustments in Pixelmator Pro lets you edit the colors in your photos, or even videos, in any way you want. And with full support for RAW photos, a collection of stunning adjustment presets, and incredible retouching tools, it couldn’t be easier to turn good-looking photos spectacular.</p>
-    <img src="./imatges/exerciciPixelmator/img_tools--v1@2x.png" alt="">
-    <img src="./imatges/exerciciPixelmator/ico_color-adjustments@2x.png" alt="">
-    <h1>Edit the colors in your photos in any way you want.</h1>
+    </div>
+    <img class="imagen_powerfull" src="./imatges/exerciciPixelmator/img_tools--v1@2x.png" alt="">
+    <div class="features">
+  <article class="feat">
+    <img class="feat__icon" src="./imatges/exerciciPixelmator/ico_color-adjustments@2x.png" alt="">
+    <h3 class="feat__title">Edit the colors in your photos in any way you want.</h3>
     <p>In Pixelmator Pro, you’ll find everything from essential color adjustments like brightness, contrast, and exposure to advanced tools like multi-channel curves and wheel-based color balance.</p>
-    <img src="./imatges/exerciciPixelmator/ico_ml@2x.png" alt="">
-    <h1>Enhance photos automagically.</h1>
+  </article>
+
+  <article class="feat">
+    <img class="feat__icon" src="./imatges/exerciciPixelmator/ico_ml@2x.png" alt="">
+    <h3 class="feat__title">Enhance photos automagically.</h3>
     <p>Many of the most important adjustments can be applied automatically, using a machine learning algorithm trained on 20 million photos.</p>
-    <img src="./imatges/exerciciPixelmator/ico_repair@2x.png" alt="">
-    <h1>Perfect every  detail.</h1>
+  </article>
+
+  <article class="feat">
+    <img class="feat__icon" src="./imatges/exerciciPixelmator/ico_repair@2x.png" alt="">
+    <h3 class="feat__title">Perfect every detail.</h3>
     <p>Magically remove unwanted objects, clone parts of your photos, lighten or darken precise areas, and do much more. All by using simple brushstrokes to retouch just the areas you want. So all your shots look picture-perfect.</p>
-    <img src="./imatges/exerciciPixelmator/ico_raw@2x.png" alt="">
-    <h1>Effortless RAW editing.</h1>
+  </article>
+
+  <article class="feat">
+    <img class="feat__icon" src="./imatges/exerciciPixelmator/ico_raw@2x.png" alt="">
+    <h3 class="feat__title">Effortless RAW editing.</h3>
     <p>Pixelmator Pro supports RAW photos from over 750 of the most popular digital cameras. What’s more, you can add RAW photos as RAW layers and edit directly without having to convert or preprocess them.</p>
-    <a href="https://support.pixelmator.com/faq-pixelmator-pro/resources/digital-camera-raw-formats-supported-in-pixelmator-pro">View supported RAW formats > </a>
-    <img src="./imatges/exerciciPixelmator/ico_color-layers@2x.png" alt="">
-    <h1>Make advanced color edits using color adjustments layers</h1>
+    <a class="feat__link" href="https://support.pixelmator.com/faq-pixelmator-pro/resources/digital-camera-raw-formats-supported-in-pixelmator-pro">View supported RAW formats</a>
+  </article>
+
+  <article class="feat">
+    <img class="feat__icon" src="./imatges/exerciciPixelmator/ico_color-layers@2x.png" alt="">
+    <h3 class="feat__title">Make advanced color edits using color adjustments layers</h3>
     <p>Use color adjustments layers to combine different color adjustments, selectively edit photos with incredible precision, and change the look entire layered compositions with ease.</p>
-    <a href="https://www.pixelmator.com/pro/#">See the full list of adjustments</a>
+  </article>
+</div>
+
+<a class="features__cta" href="https://www.pixelmator.com/pro/#">See the full list of adjustments</a>
+
 </section>
 <section id="design_tools">
-
-    <h1>Everything you need to create beautiful designs.</h1>
+<div class="contenedor_texto">
+    <h1 class="diseño_titulo">Everything you need to create beautiful designs.</h1>
     <p>Whether you’re working on a design for a poster, a webpage, or a blockbuster app, you’ll make your ideas come to life in Pixelmator Pro. With smart spacing guides, advanced alignment tools, and blazing fast performance, you can harness the full power of layer-based editing.</p>
-    <img src="./imatges/exerciciPixelmator/img_design--v1@2x.png" alt="">
-    <div>
-        <h1>Layer-Based Editing</h1>
+</div>
+    <img class="imagen_everything" src="./imatges/exerciciPixelmator/img_design--v1@2x.png" alt="">
+    <div id="desing_layer">
+        <div class="feature-block">
+        <div class="feature-text">
+        <h3>Layer-Based Editing</h3>
         <p>Use simple buildings blocks – shape, text, video, and image layers – to create stunning compositions and designs. Add layers in delightfully quick and simple ways, such as by dragging and dropping them straight into Pixelmator Pro, or using the built-in Photo Browser.</p>
-        <img src="./imatges/exerciciPixelmator/img_design-layers@2x.jpg" alt="">
+        </div>
+        <img class="feature-media" src="./imatges/exerciciPixelmator/img_design-layers@2x.jpg" alt="">
     </div>
-    <div>
-        <img src="./imatges/exerciciPixelmator/img_design-guides@2x.jpg" alt="">
-        <p>The Arrange tool makes it incredibly easy to create designs. It lets you automatically select layers by clicking them on the canvas, intelligently snaps layers into position as you move them around, and even lets you align and distribute layers automatically</p>
     </div>
-    <div>
-        <img src="./imatges/exerciciPixelmator/img_design-layer-styles@2x.jpg" alt="">
-        <h1>Layer Styles</h1>
-        <p>Nondestructively customize the look of any layer in your image by adding fills, strokes, and shadows, or any combination of multiple styles. And with presets, you can save your favorite combinations, use them in any of your images, and even share them with others.</p>
-    </div>
-    <h1>Create stunning designs like a pro – even if you’re a beginner.</h1>
-    <p>Create eye‑catching designs with ease using stunning design templates and see them come to life in beautiful, fully‑customizable mockups.</p>
+    <div class="design_cards">
+      <div class="smart_guides_card">
+        <div class="smart_guides_background">
+          <div class="smart_guides_text">
+            <p> The Arrange tool makes it incredibly easy to create designs. It lets you automatically select layers by clicking them on the canvas, intelligently snaps layers into position as you move them around, and even lets you align and distribute layers automatically</p>
+            </div>  
+          </div>
+        </div>
+      <div class="layer_styles_card">
+          <img src="./imatges/exerciciPixelmator/img_design-layer-styles@2x.jpg" alt="">
+          <p><strong>Layer Styles</strong><br>  Nondestructively customize the look of any layer in your image by adding fills, strokes, and shadows, or any combination of multiple styles. And with presets, you can save your favorite combinations, use them in any of your images, and even share them with others.</p>
+      </div>
+      </div>
     <img src="./imatges/exerciciPixelmator/img_hero--top@2x.png" alt="">
 </section>
 <section id="machine_learning">
-    <h1>Image editing powered by machine learning.</h1>
+  <div class="contenedor_texto">
+    <h1 class="diseño_titulo">Image editing powered by machine learning.</h1>
     <p>To deliver more intelligent image editing, Pixelmator Pro uses machine learning — a technology that allows computers to gain knowledge to perform specific tasks more like a person than a computer. Which enabled us to create features that have never before been possible.</p>
-    <div>
+    </div>
+    <div class="ml_cards">
+      <div class="ml_card">
         <img src="./imatges/exerciciPixelmator/img_ml-enhance@2x.png" alt="">
-        <h1>ML Enhance</h1>
+        <h3>ML Enhance</h3>
         <p>Automatically enhance photos like a pro photographer.</p>
-    </div>
-    <div>
+      </div>
+      <div class="ml_card">
         <img src="./imatges/exerciciPixelmator/img_ml-super-resolution@2x.png" alt="">
-        <h1>Super Resolution</h1>
+        <h3>Super Resolution</h3>
         <p>Magically increase the resolution of images while preserving sharpness and details.</p>
-    </div>
-    <div>
-        <img src="./imatges/exerciciPixelmator/img_ml-match-colors@2x.png" alt="">
-        <h1>Match Colors</h1>
+      </div>
+      <div class="ml_card">
+          <img src="./imatges/exerciciPixelmator/img_ml-match-colors@2x.png" alt="">
+        <h3>Match Colors</h3>
         <p>Quickly and easily match the colors and style of any photo.</p>
-    </div>
-    <div>
+      </div>
+    <div class="ml_card">
         <img src="./imatges/exerciciPixelmator/img_ml-denoise@2x.png" alt="">
-        <h1>Denoise</h1>
+        <h3>Denoise</h3>
         <p>Effortlessly remove camera noise and image compression artifacts from photos.</p>
     </div>
-    <div>
+    <div class="ml_card">
         <img src="./imatges/exerciciPixelmator/img_quick-selection-tool@2x.png" alt="">
-        <h1>Quick Selection Tool</h1>
+        <h3>Quick Selection Tool</h3>
         <p>Quickly make accurate selections with ease.</p>
     </div>
-    <div>
+    <div class="ml_card">
         <img src="./imatges/exerciciPixelmator/ico_ml-crop@2x.png" alt="">
-        <h1>Crop</h1>
+        <h3>Crop</h3>
         <p>Improve the composition of photos with just a click.</p>
     </div>
-    <div>
+    <div class="ml_card">
         <img src="./imatges/exerciciPixelmator/ico_remove-background@2x.png" alt="">
-        <h1>Remove Background</h1>
+        <h3>Remove Background</h3>
         <p>Remove the background from any image with just a click.</p>
     </div>
-    <div>
+    <div class="ml_card">
         <img src="./imatges/exerciciPixelmator/ico_select-subject@2x.png" alt="">
-        <h1>Select Subject</h1>
+        <h3>Select Subject</h3>
         <p>Automatically select the subjects of images with ease.</p>
     </div>
-    <div>
+    <div class="ml_card">
         <img src="./imatges/exerciciPixelmator/img_select-and-mask@2x.png" alt="">
-        <h1>Select and Mask Tool</h1>
+        <h3>Select and Mask Tool</h3>
         <p>Easily make advanced selections of challenging image areas like hair or fur.</p>
+    </div>
     </div>
 </section>
 <section id="remove">
-    <h1>Magically get rid of unwanted objects.</h1>
+  <div class="contenedor_texto">
+    <h1 class="diseño_titulo">Magically get rid of unwanted objects.</h1>
     <p>Make small imperfections or even entire objects disappear from your images by painting over them with the Repair Tool. No matter how complex the background, the Repair Tool can make almost any object vanish without a trace.</p>
-    <video>
-        <source src="./imatges/exerciciPixelmator/video_repair.mp4">
+    </div>
+    <div class="video_remove">
+    <video autoplay muted loop playsinline>
+        <source src="./imatges/exerciciPixelmator/video_repair.mp4" >
     </video>
-    <h1>Easily deign</h1>
+    </div>
+    <div class="contenedor_texto"></div>
+    <h1 class="diseño_titulo">Easily deign</h1>
     <img src="./imatges/exerciciPixelmator/img_text@2x.jpg" alt="">
+    <div class="contenedor_texto">
     <p>Using the powerful Type tools in Pixelmator Pro, you can easily design great-looking text in all your images. Effortlessly create curved text or type along shapes and paths. And use a full set of typography tools to customize text in any way you can imagine.</p>
+    </div>
     <div>
         <h1>Type on a Path</h1>
         <p>Pixelmator Pro includes a range of intuitive and easy-to-use tools for designing curved and circular text. Use the Circular Type tool to create circular text, the Path Type tool to create path text, or type text around the edges of any default or even custom shape.</p>
@@ -206,16 +242,18 @@
     </div>
 </section>
 <section id="effects">
-    <h1>Real-time, nondestructive, blockbuster effects.</h1>
-    <p>Pixelmator Pro comes with a collection of over 60 versatile effects that you can mix and combine to develop any artistic or special effects you can imagine. Effects are nondestructive, so you can always edit, rearrange, or remove an effect after applying it. And you can even apply multiple effects to a single layer — seeing all your changes in real time.</p>
+  <div class="contenedor_texto">
+    <h1 class="diseño_titulo">Real-time, nondestructive, blockbuster effects.</h1>
+    <p>Pixelmator Pro comes with a collection of over 60 versatile effects that you can mix and combine to develop any artistic or special effects you can imagine. Effects are nondestructive, so you can always edit, rearrange, or remove an effect after applying it. And you can even apply multiple effects to a single layer — seeing all your changes in real time.</p></div>
     <img src="./imatges/exerciciPixelmator/img_effects@2x.png" alt="">
     <div>
         <h1>Effects Browser</h1>
         <p>The effects browser makes it incredibly easy to find just the effect you need. Browse effects, search for them by name, see instant previews, and quickly apply effects to your currently selected object.</p>
         <img src="./imatges/exerciciPixelmator/img_effects-browser@2x.png" alt="">
     </div>
-    <h1>Advanced features for advanced workflows</h1>
-    <p>Pixelmator Pro is designed from the ground up to be easy to use for beginners. But it’s ready to progress with you as you start mastering image editing, so you’ll also find many advanced features like Export for Web, Soft Proofing, support for Adobe Photoshop files, color management, AppleScript, and more.</p>
+    <div class="contenedor_texto">
+    <h1 class="diseño_titulo">Advanced features for advanced workflows</h1>
+    <p>Pixelmator Pro is designed from the ground up to be easy to use for beginners. But it’s ready to progress with you as you start mastering image editing, so you’ll also find many advanced features like Export for Web, Soft Proofing, support for Adobe Photoshop files, color management, AppleScript, and more.</p></div>
     <div>
         <img src="./imatges/exerciciPixelmator/ico_optimize-for-web@2x.png" alt="">
         <h1>Optimize for Web</h1>
@@ -239,8 +277,10 @@
 </section>
 <section id="mac-exclusive">
     <img src="./imatges/exerciciPixelmator/img_dock@2x.jpg" alt="">
-    <h1>Designed and built exclusively for Mac.</h1>
+    <div class="contenedor_texto">
+    <h1 class="diseño_titulo">Designed and built exclusively for Mac.</h1>
     <p>From its app icon and the way it looks and feels to the technologies it supports, Pixelmator Pro has been designed to be the ultimate Mac app. Enjoy full support for every Mac feature and technology you’d expect — iCloud, Versions, Shortcuts, Sidecar, Apple Pencil, and many others.</p>
+    </div>
     <li>
         <article>
             <img src="./imatges/exerciciPixelmator/ico_universal@2x.png" alt="">
@@ -315,8 +355,10 @@
     </li>
 </section>
 <section id="mac-technologies">
-    <h1>Powered by the latest Mac technologies.</h1>
+  <div class="contenedor_texto">
+    <h1 class="diseño_titulo_white">Powered by the latest Mac technologies.</h1>
     <p>The Pixelmator Pro image editing engine is seriously sophisticated and incredibly powerful. It’s designed exclusively to take advantage of the full power of Mac computers, using advanced Mac graphics technologies like Metal and Core Image. Pushing the boundaries of image editing, Pixelmator Pro also includes machine learning-enhanced editing features powered by Core ML. So tools aren’t just blistering fast — they’re whip smart too.</p>
+    </div>
     <li>
       <article>
         <img src="./imatges/exerciciPixelmator/ico_apple-silicon@2x.png" alt="">
@@ -362,8 +404,10 @@
     
 </section>
 <section id="awards">
-    <h1>We know you'll love Pixelmator Pro. But don't take our word for it.</h1>
+  <div class="contenedor_texto">
+    <h1 class="diseño_titulo">We know you'll love Pixelmator Pro. But don't take our word for it.</h1>
     <p>Pixelmator Pro has an average worldwide rating of 4.8 stars out of 5 with over 48,000 five-star ratings. It also has a Mac App of the Year award and proudly sports an Editors’ Choice badge on the Mac App Store. We think you’ll love it — and we’re not the only ones.</p>
+    </div>
     <li>
       <article>
         <img src="./imatges/exerciciPixelmator/img_app-of-the-year@2x.png" alt="">
@@ -398,16 +442,9 @@
     <button type="button" class="btn btn--buy">Buy now</button>
 </section>
 </main>
-<footer class="site-footer">
-  <div class="container">
-    <p>&copy; 2025 Pixelmator Pro — Recreated for educational purposes</p>
-    <nav>
-      <a href="#hero">Top</a> • 
-      <a href="https://www.pixelmator.com/pro/" target="_blank" rel="noopener">Official Site</a>
-    </nav>
-  </div>
-</footer>
-
-
+<footer></footer>
+       
+        
+    
 </body>
 </html>

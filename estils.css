@@ -1,36 +1,25 @@
+/* =========================================================
+   BASE LIMPIA — Pixelmator Clone
+   ========================================================= */
 
-*,
-*::before,
-*::after{ box-sizing: border-box; }
-html, body{ height:100%; margin:0; padding:0; overflow: visible !important; }
-.lloc_header, #topbar, #navbar{ transform: none !important; }
+/* Reset mínimo */
+*, *::before, *::after { box-sizing: border-box; }
 
-
-:root{
-  --text:#f2f2f2;
-  --muted:#b5b5b5;
-  --bg:#0a0a0a;
-  --hairline: rgba(255,255,255,0.1);
-  --buy:#ff5b7f;
-  --webkit-backdrop-filter: blur(12px);
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;       /* ❗ bloquea scroll lateral */
 }
 
-
-  :root{
-    --text:#111;
-    --muted:#666;
-    --bg:#ffffff;
-    --hairline: rgba(0,0,0,.08);
-    --buy:#ff5b7f;
-  }
-
-
-
-body{ background:var(--bg); color:var(--text); font:16px/1.45 system-ui,-apple-system,"Inter","SF Pro Text",Segoe UI,Roboto,Arial,sans-serif; }
-.container{ width:min(var(--container-max), 100% - (var(--gutter)*2)); margin-inline:auto; }
-@media (max-width:480px){ :root{ --gutter:16px; } }
-
-
+/* Variables unificadas */
+:root{
+  --text: #111;
+  --muted: #646464;
+  --bg: #fff;
+  --hairline: rgba(0,0,0,.08);
+  --buy: #ff5b7f;
+}
 .header__top{ background:var(--bg); position:relative; align-items: center; width:100%; }
 .header__top-inner{
   position: relative; /* o simplemente elimina la propiedad position */
@@ -85,135 +74,659 @@ navbar{
 .btn--buy{ background: var(--buy); color:#fff; border: none; }
 
 
-span{
-    color: #111;
-}
-.hero__img{
-  display: block;              /* quita el espacio extra de inline */
-  margin-inline: auto;         /* centra horizontalmente */
-  max-width: 100%;             /* evita que se salga del container */
-  width: min(100%, 900px);     /* tope máximo de 900px o lo que prefieras */
-  height: auto;                /* mantiene proporción */
-}
-section {
-  padding: 80px 20px;
-  max-width: 1100px;
-  margin: auto;
-}
-
-section h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 2rem;
-}
-
-section p {
-  text-align: center;
-  color: var(--muted);
-  max-width: 800px;
-  margin: 0 auto 40px;
-  line-height: 1.6;
-}
-section img {
-  display: block;
-  margin: 20px auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  max-width: 100%;
-  height: auto;
-}
-.btn--buy {
-  box-shadow: 0 4px 12px rgba(255, 91, 127, 0.4);
-  transition: all 0.3s ease;
-}
-
-.btn--buy:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(255, 91, 127, 0.5);
-}
-#hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap; /* así en pantallas pequeñas se apila */
-  text-align: left;
-}
-
-.hero__content {
-  flex: 1 1 400px;
-  min-width: 300px;
-}
-
-.hero_img {
-  flex: 1 1 400px;
-  min-width: 300px;
-  border-radius: 16px;
-}
-.site-footer {
-  background: var(--hairline);
-  padding: 40px 20px;
-  text-align: center;
-  font-size: 0.9rem;
-  color: var(--muted);
-}
-
-.site-footer a {
-  color: var(--text);
-  opacity: 0.8;
-  text-decoration: none;
-  margin: 0 4px;
-}
-
-.site-footer a:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
-body {
+/* Base tipográfica */
+body{
   background: var(--bg);
   color: var(--text);
-  font:16px/1.45 system-ui,-apple-system,"Inter","SF Pro Text",Segoe UI,Roboto,Arial,sans-serif;
+  font-family:system-ui, -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
 }
+
+/* Sección base (contenido centrado/limitado) */
+section{
+  position: relative;
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Fondo full-bleed: el color de la sección se estira a 100vw */
+section::before{
+  content: "";
+  position: absolute;
+  inset: 0 calc(50% - 50vw);
+  background: inherit;
+  z-index: -1;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+#hero{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 18px;
+  /* Si tu imagen tiene off-white en las esquinas, puedes usar:
+     background: #f5f5f7; */
+}
+
+#hero h1,
+#design_tools h1,
+#machine_learning h1,
+#remove h1,
+#mac-exclusive h1{
+  max-width: 900px;
+  margin: 0 auto;
+  font-weight: 800;
+  font-size: clamp(28px, 4vw, 56px);
+  line-height: 1.1;
+}
+
+#hero p{
+  max-width: 760px;
+  margin: 0 auto;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.hero_img{
+  display: block;
+  width: min(90%, 1100px);  /* controla tamaño del hero */
+  height: auto;
+  border-radius: 14px;
+}
+
+/* Botón del hero */
+.button_1section{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--buy);
+  color: #fff;
+  border: 0;
+  font-weight: 700;
+  margin-top: 8px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(255,91,127,.35);
+}
+.button_1section:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(255,91,127,.45);
+}
+
+/* =========================================================
+   SECCIONES OSCURAS QUE DEBEN LLENAR LA PANTALLA
+   (añade/quita IDs según tu HTML)
+   ========================================================= */
 #vector_tools,
 #photo_tools,
-#mac-technologies {
-  background-color: #0a0a0a;
+#mac-technologies,
+#effects,
+#awards{
+  background: #0a0a0a;     /* negro a todo lo ancho (full-bleed por ::before) */
+  color: #fff;
+}
+#vector_tools h1,
+#vector_tools p,
+#photo_tools h1,
+#photo_tools p,
+#mac-technologies h1,
+#mac-technologies p,
+#effects h1,
+#effects p,
+#awards h1,
+#awards p{
+  color: #fff;
+  text-align: center;
+  
 }
 #vector_tools h1,
 #photo_tools h1,
-#mac-technologies h1 {
-  color: #ffffff;
-}
-#vector_tools p,
-#photo_tools p,
-#mac-technologies p {
-  color: #ffffff;
-}
-
-
-#photo_tools{background-color: #0a0a0a;}
-#effects{
-  background-color: #b5b5b5;
-}
-
-
-#awards{
-  background-color: #b5b5b5;
+#mac-technologies h1,
+#effects h1,
+#awards h1
+{
+  font-size: 40px;
   
 }
-:root{
-  --topbar-h: 56px; /* pon aquí la altura real de tu topbar */
+#vector_tools .imagen_draw{
+  display: block;
+  width: min(95%);  /* controla tamaño del hero */
+  height: auto;
+  border-radius: 14px;
+}
+/* =========================================================
+   VECTOR TOOLS — 2 tarjetas arriba + 1 full width abajo (Flex)
+   ========================================================= */
+
+#vector_tools .box{
+  max-width: 75%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;                /* espacio entre cards */
+  align-items: stretch;     /* iguala alturas en la fila */
+}
+#photo_tools .imagen_powerfull {
+  display: block;
+  margin: 40px auto;
+  max-width: 100%;
+  height: auto;
 }
 
-/* Hace que el topbar “se vaya” hacia arriba al scrollear */
-#topbar{
-  position: relative;   /* flujo normal, scrollea y desaparece */
-  z-index: 10;
+.media {
+  max-width: 100%;
 }
-/* El navbar queda fijo arriba cuando llega */
-#navbar{
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  background: #fff; /* asegúrate de tapar el contenido debajo */
+
+/* Cards superiores */
+#vector_tools .resolution-independent,
+#vector_tools .vector_support{
+  flex: 1 1 calc(50% - 9px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #1d1d1f;
+  border-radius: 12px;
+  padding: 24px;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+/* Títulos y párrafos a la izquierda */
+#vector_tools .resolution-independent h1,
+#vector_tools .vector_support h1,
+#vector_tools .resolution-independent p,
+#vector_tools .vector_support p{
+  text-align: left;
+  margin: 0 0 12px 0;
+}
+.contenedor_texto{
+  max-width: 760px; /* 👈 Ajusta este valor: más pequeño que la imagen */
+  margin: 0 auto 40px; /* Centrado con espacio inferior */
+  text-align: center;
+  justify-items: center;
+  justify-content: center;
+}
+/* Imagen izquierda full-bleed (toca bordes de la card) */
+#vector_tools .resolution-independent .media{
+  margin: 16px 0 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #111;
+}
+#vector_tools .resolution-independent .media img{
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+/* Icono derecha a la izquierda y abajo */
+#vector_tools .vector_support img{
+  display: block;
+  width: 120px;
+  height: auto;
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+/* Card inferior full width (Smart Shapes) */
+#vector_tools .smart_card{
+  flex: 1 0 100%;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  background: #1d1d1f;
+  border-radius: 12px;
+  padding: 24px;
+  box-sizing: border-box;
+  color: #fff;
+}
+#vector_tools .smart_text{
+  display: flex;
+  flex-direction: column;   /* h1 arriba, p debajo */
+}
+#vector_tools .smart_text h1{ margin: 0 0 10px 0; }
+#vector_tools .smart_text p{ margin: 0; color: #d7d7d7; }
+#vector_tools .vector_video{
+  display: block;
+  max-width: 50%;
+  margin-left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.4);
+}
+
+/* =========================================================
+   PHOTO TOOLS — 2 columnas (3/2), izquierda alineada
+   ========================================================= */
+
+#photo_tools .features {
+  width: auto;
+  max-width: 900px;
+  margin: 0 auto;
+  column-count: 2;          /* fuerza 2 columnas: 3/2 natural por altura */
+  column-gap: 56px;
+}
+
+/* ===== Cada item (feat) ===== */
+#photo_tools .feat {
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 32px;
+  padding-inline: 4px;
+  break-inside: avoid;
+  text-align: left;
+}
+
+#photo_tools .feat__icon {
+  display: block;
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  padding: 8px;
+  background: #2a2a2a;      /* pill; pon transparent si no lo quieres */
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.06);
+  margin: 0 0 12px 0;
+}
+
+#photo_tools .feat__title {
+  font: 700 1.4rem/1.25 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: #fff;
+  margin: 0 0 10px 0;
+  text-align: left;
+}
+
+#photo_tools .feat p {
+  color: #cfcfcf;
+  line-height: 1.65;
+  margin: 0;
+  text-align: left;
+}
+
+/* ===== Links unificados (feat + CTA inferior) ===== */
+#photo_tools .feat a,
+#photo_tools .features__cta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.1rem;         /* mismo tamaño para todos */
+  font-weight: 600;
+  color: #4da3ff;            /* azul más brillante */
+  text-decoration: none;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+/* Hover con efecto sutil */
+#photo_tools .feat a:hover,
+#photo_tools .features__cta a:hover {
+  color: #5ab0ff;
+  transform: translateY(-2px);
+}
+
+/* Icono “>” animado */
+#photo_tools .feat a::after,
+#photo_tools .features__cta a::after {
+  content: " ›";
+  font-weight: 700;
+  transition: transform 0.25s ease;
+}
+
+#photo_tools .feat a:hover::after,
+#photo_tools .features__cta a:hover::after {
+  transform: translateX(4px);
+}
+#photo_tools .features__cta::after {
+  content: " >";
+  font-weight: 700;
+  transition: transform .25s ease;
+}
+#photo_tools .features__cta:hover {
+  color: #5ab0ff;
+  transform: translateY(-2px);
+}
+
+#photo_tools .features__cta:hover::after {
+  transform: translateX(4px);
+}
+/* ===== CTA inferior centrado ===== */
+#photo_tools .features__cta {
+  display: flex;
+  justify-content: center;     /* Centra horizontalmente */
+  align-items: center;
+  width: 100%;                 /* Ocupa todo el ancho del contenedor */
+  margin: 32px auto 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2997ff;
+  text-decoration: none;
+  transition: color .25s ease, transform .25s ease;
+}
+.imagen_everything{
+  width: 100%;
+  max-width: 100%;
+  box-shadow:#0a0a0a;
+}
+#design_tools .feature-hero{
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  background: #f4f4f4;
+  border-radius: 24px;
+  padding: 40px;
+  max-width: 1100px;
+  margin: 0 auto 28px;
+}
+#design_tools .feature-copy{
+  flex: 1 1 0;
+  text-align: left;
+  color: #111;
+}
+#design_tools .feature-copy h1{
+  font-size: clamp(22px, 2.2vw, 32px);
+  font-weight: 800;
+  margin: 0 0 10px;
+}
+#design_tools .feature-copy p{
+  line-height: 1.7;
+  color: #333;
+  margin: 0;
+}
+#design_tools .feature-media{
+  flex: 1 1 56%;
+  line-height: 1.6;
+  border-radius: 18px;
+  display: block;
+  object-fit: cover;
+}
+.design_cards{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px;
+  margin: 60px auto;
+  max-width: 1100px;
+}
+.feature-block {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f7;
+  border-radius: 24px;
+  margin:0 auto 60px;
+  padding: 40px 50px;
+  gap:50px;
+  box-sizing: border-box;
+}
+.feature-text {
+  flex: 0 0 44%;
+  max-width: 400px;
+  text-align: left;
+  color: #1d1d1f;
+  padding-left: 20px;
+}
+
+.feature-text h3 {
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 1.25;
+  color: #1d1d1f;
+  margin: 0 0 12px 0;
+  ;
+}
+
+.feature-text p {
+  color: #333;
+  line-height: 1.6;
+  font-size: 16px;
+  margin: 30px auto;
+}
+
+.feature-block img {
+  flex: 1;
+  max-width: 600px;
+  height: auto;
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;              /* sin redondear, se fusiona con el fondo */
+  object-fit:cover;
+}
+
+.smart_guides_card {
+  background-color: #2f434a;
+  position: relative;
+  width: 50%;
+  height: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  padding-left:50px;
+  padding-top: 10px;
+}
+.smart_guides_background{
+  position: relative;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  background-image: url('./imatges/exerciciPixelmator/img_design-guides@2x.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left top;
+  overflow: hidden;
+}
+
+.smart_guides_card h2 {
+  font-size: clamp(60px, 8vw, 100px);
+  font-weight: 900;
+  line-height: 0.9;
+  margin: 0;
+  z-index: 2;
+  position: relative;
+}
+.smart_guides_card p {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  right: 40px;
+  max-width: 600px;
+  color: #d6e0e3;
+  font-size: 17px;
+  line-height: 1.6;
+  z-index: 2;
+}
+
+/* si quieres oscurecer un poco la imagen */
+
+
+/* texto siempre por encima */
+.smart-guides_card h2,
+.smart-guides-card p {
+  position: relative;
+  z-index: 2;
+}
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  width: 80%;
+  z-index: 1;
+}
+.overlay-text h2 {
+  font-size: clamp(40px, 5vw, 72px);
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+.overlay-text p {
+  font-size: 18px;
+  color: #ddd;
+  line-height: 1.6;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.smart_guides_text {
+  width: 90%;
+  height:200px ;
+  position: absolute;
+  top: 55%;
+  color: #d6e0e3;
+  font-size: 17px;
+  line-height: 1.6;
+  z-index: 3;
+  max-width: 420px;
+  margin: 0;
+}
+.layer_styles_card{
+  width: 50%;
+  height: 500px;
+  background-color: #fefefe;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+}
+.layer_styles_card img{
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  
+}
+.layer_styles_card h3{
+  font-size: 20px;
+  text-align: left;
+
+}
+.layer_styles_card p {
+  font-size: 19px;
+  padding: 20px;
+
+}
+#machine_learning {
+  text-align: center;
+  background: #fff;
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+#machine_learning h1 {
+  font-weight: 800;
+  font-size: clamp(28px, 3vw, 46px);
+  line-height: 1.1;
+}
+
+#machine_learning h1 span {
+  color: #f5b800; /* tono amarillo similar al de Pixelmator */
+}
+
+#machine_learning p {
+  color: #333;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+/* ===== Cuadrícula ===== */
+.ml_cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  justify-items: center;
+}
+
+/* ===== Cada tarjeta ===== */
+.ml_card {
+  background: #f5f5f7;
+  border-radius: 16px;
+  padding: 28px 20px;
+  text-align: center;
+  max-width: 300px;
+  height: 250px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.ml_card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Contenido de la tarjeta ===== */
+.ml_card img {
+  width: 56px;
+  height: auto;
+  margin-bottom: 16px;
+}
+
+.ml_card h3 {
+  font-weight: 900;
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.ml_card p {
+  font-size: 17px;
+  color: #444;
+  line-height: 1.6;
+  margin: 0;
+}
+
+#remove .video_remove{
+  width: min(90vw,1100px);
+  margin: 24px auto 0;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 14px 42px rgba(0, 0, 0, .16);
+  background: #000;
+}
+
+#remove .video_remove video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px){
+  /* Vector Tools */
+  #vector_tools .resolution-independent,
+  #vector_tools .vector_support{
+    flex-basis: 100%;
+  }
+  #vector_tools .smart_card{
+    flex-direction: column;
+    align-items: stretch;
+  }
+  #vector_tools .smart_media video{ max-width: 100%; }
+
+  /* Photo Tools → 1 columna */
+  #photo_tools .features{ column-count: 1; column-gap: 0; }
+}
+
+/* Pequeños ajustes XL */
+@media (min-width: 1400px){
+  .hero_img{ width: 1100px; }  /* evita que crezca infinito */
 }
