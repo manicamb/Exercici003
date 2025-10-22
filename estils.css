@@ -9,7 +9,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;       /* ❗ bloquea scroll lateral */
+  overflow-x: hidden;       /* bloquea scroll lateral */
 }
 
 /* Variables unificadas */
@@ -35,16 +35,8 @@ html, body {
 .topmenu__item--active::after{
   content:""; position:absolute; left:0; right:0; bottom:-1px; height:2px; border-radius:2px; background:var(--text);
 }
-h1 ,p{
-    color: #111;
-    justify-content: center;
-    align-items: center;
-}
-navbar{
-    position: sticky;
-    display: flex;
-    align-items: center;
-}
+h1 ,p{ }
+
 .header__nav.sticky{
   position: sticky;
   top: 0;
@@ -69,7 +61,7 @@ navbar{
 .brand__logo{ width:24px; height:24px; border-radius:6px; }
 .brand__name{ font-weight:700; }
 .navlinks{ display:flex; gap:24px; }
-.navlinks__item{ color:rgba(0,0,0,.0); opacity:.92; }
+.navlinks__item{ color:var(--text); opacity:.92; }
 .navlinks__item--muted{ color:var(--muted); }
 .btn{ display:inline-flex; align-items:center; gap:8px; padding:8px 14px; border-radius:999px; font-weight:600; }
 .btn--buy{ background: var(--buy); color:#fff; border: none; }
@@ -82,6 +74,11 @@ body{
   font-family:system-ui, -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 16px;
   line-height: 1.45;
+}
+.container{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 /* Sección base (contenido centrado/limitado) */
@@ -132,7 +129,7 @@ section::before{
 #hero p{
   max-width: 760px;
   margin: 0 auto;
-  color: var(--muted);
+  color: var(--text);
   line-height: 1.7;
 }
 
@@ -165,7 +162,7 @@ section::before{
 
 /* =========================================================
    SECCIONES OSCURAS QUE DEBEN LLENAR LA PANTALLA
-   (añade/quita IDs según tu HTML)
+
    ========================================================= */
 #vector_tools,
 #photo_tools,
@@ -200,13 +197,13 @@ section::before{
 }
 #vector_tools .imagen_draw{
   display: block;
-  width: min(95%);  /* controla tamaño del hero */
+  width: min(95%,1100px);  /* controla tamaño del hero */
   height: auto;
   border-radius: 14px;
 }
-/* =========================================================
+/* 
    VECTOR TOOLS — 2 tarjetas arriba + 1 full width abajo (Flex)
-   ========================================================= */
+   */
 
 #vector_tools .box{
   max-width: 75%;
@@ -297,14 +294,14 @@ section::before{
 }
 #vector_tools .smart_text h1{ margin: 0 0 10px 0; }
 #vector_tools .smart_text p{ margin: 0; color: #d7d7d7; }
+
 #vector_tools .vector_video{
   display: block;
   max-width: 50%;
   margin-left: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
   height: auto;
+  object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,.4);
 }
@@ -358,8 +355,8 @@ section::before{
 }
 
 /* ===== Links unificados (feat + CTA inferior) ===== */
-#photo_tools .feat a,
-#photo_tools .features__cta a {
+
+#photo_tools .feat a {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -371,26 +368,23 @@ section::before{
 }
 
 /* Hover con efecto sutil */
-#photo_tools .feat a:hover,
-#photo_tools .features__cta a:hover {
+#photo_tools .feat a:hover{
   color: #5ab0ff;
   transform: translateY(-2px);
 }
 
 /* Icono “>” animado */
-#photo_tools .feat a::after,
-#photo_tools .features__cta a::after {
+#photo_tools .feat a::after{
   content: " ›";
   font-weight: 700;
   transition: transform 0.25s ease;
 }
 
-#photo_tools .feat a:hover::after,
-#photo_tools .features__cta a:hover::after {
+#photo_tools .feat a:hover::after {
   transform: translateX(4px);
 }
 #photo_tools .features__cta::after {
-  content: " >";
+  content: "  ›";
   font-weight: 700;
   transition: transform .25s ease;
 }
@@ -418,7 +412,7 @@ section::before{
 .imagen_everything{
   width: 100%;
   max-width: 100%;
-  box-shadow:#0a0a0a;
+  box-shadow: 0 2px 8px rgba(0,0,0,.25);
 }
 #design_tools .feature-hero{
   display: flex;
@@ -448,9 +442,12 @@ section::before{
 #design_tools .feature-media{
   flex: 1 1 56%;
   line-height: 1.6;
-  border-radius: 18px;
+  border-radius: 14px;
   display: block;
   object-fit: cover;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
 }
 .design_cards{
   display: flex;
@@ -497,17 +494,6 @@ section::before{
   margin: 30px auto;
 }
 
-.feature-block img {
-  flex: 1;
-  max-width: 600px;
-  height: auto;
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 12px;              /* sin redondear, se fusiona con el fondo */
-  object-fit:cover;
-}
-
 .smart_guides_card {
   background-color: #2f434a;
   position: relative;
@@ -551,38 +537,6 @@ section::before{
   z-index: 2;
 }
 
-/* si quieres oscurecer un poco la imagen */
-
-
-/* texto siempre por encima */
-.smart-guides_card h2,
-.smart-guides-card p {
-  position: relative;
-  z-index: 2;
-}
-.overlay-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-align: center;
-  width: 80%;
-  z-index: 1;
-}
-.overlay-text h2 {
-  font-size: clamp(40px, 5vw, 72px);
-  margin-bottom: 12px;
-  line-height: 1;
-}
-
-.overlay-text p {
-  font-size: 18px;
-  color: #ddd;
-  line-height: 1.6;
-  max-width: 640px;
-  margin: 0 auto;
-}
 .smart_guides_text {
   width: 90%;
   height:200px ;
@@ -826,7 +780,7 @@ section::before{
     flex-direction: column;
     align-items: stretch;
   }
-  #vector_tools .smart_media video{ max-width: 100%; }
+  #vector_tools .vector_video{ max-width: 100%; }
 
   /* Photo Tools → 1 columna */
   #photo_tools .features{ column-count: 1; column-gap: 0; }
@@ -837,15 +791,15 @@ section::before{
   .hero_img{ width: 1100px; }  /* evita que crezca infinito */
 }
 @media (max-width: 900px) {
-  #type_tools {
+  #tipo_tools {
     padding-top: 120px;
     background-position: center center;
     height: 90vh;
   }
-  #type_tools h1 {
+  #tipo_tools h1 {
     font-size: 34px;
   }
-  #type_tools p {
+  #tipo_tools p {
     font-size: 15px;
   }
 }
@@ -855,5 +809,5 @@ section::before{
     gap: 20px;
     margin: -40px auto 32px;    /* solapado más suave en pantallas pequeñas */
   }
-  .type_path_copy{ max-width: 100%; }
+  .type_path_contenido{ max-width: 100%; }
 }
