@@ -21,14 +21,14 @@ html, body {
   --buy: #ff5b7f;
   --type_card_green:#22c07a;
 }
-.header__top{ background:var(--bg); position:relative; align-items: center; width:100%; }
+.header__top{ background:var(--bg); position:relative;  width:100%; }
 .header__top-inner{
   display:flex;
   align-items:center;
   gap:32px;
   min-height:54px;
 }
-.header__top-underline{ height:1px; background:var(--hairline); width:100%; }
+.header__top-underline{ height:1px; background:var(--hairline); }
 .topmenu__item{ display:inline-flex; align-items:center; gap:8px; color:var(--text); opacity:.92; padding:12px 0; }
 .topmenu__item--active{ font-weight:600; position:relative; }
 .topmenu__item--active::after{
@@ -40,7 +40,6 @@ html, body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  width: 100%;
 }
 
 
@@ -169,7 +168,7 @@ section::before{
   background: #0a0a0a;     /* negro a todo lo ancho (full-bleed por ::before) */
   color: #fff;
 }
-#vector_tools h1,
+
 #vector_tools p,
 #photo_tools h1,
 #photo_tools p,
@@ -213,7 +212,6 @@ section::before{
   display: flex;
   flex-wrap: wrap;
   gap: 18px;                /* espacio entre cards */
-  align-items: stretch;     /* iguala alturas en la fila */
 }
 #photo_tools .imagen_powerfull {
   display: block;
@@ -222,9 +220,6 @@ section::before{
   height: auto;
 }
 
-.media {
-  max-width: 100%;
-}
 
 /* Cards superiores */
 #vector_tools .resolution-independent,
@@ -236,7 +231,6 @@ section::before{
   background: #1d1d1f;
   border-radius: 12px;
   padding: 24px;
-  box-sizing: border-box;
   color: #fff;
 }
 
@@ -251,8 +245,6 @@ section::before{
   max-width: 760px; /* 👈 Ajusta este valor: más pequeño que la imagen */
   margin: 0 auto 40px; /* Centrado con espacio inferior */
   text-align: center;
-  justify-items: center;
-  justify-content: center;
 }
 /* Imagen izquierda full-bleed (toca bordes de la card) */
 #vector_tools .resolution-independent .media{
@@ -286,14 +278,13 @@ section::before{
   background: #1d1d1f;
   border-radius: 12px;
   padding: 24px;
-  box-sizing: border-box;
   color: #fff;
 }
 #vector_tools .smart_text{
   display: flex;
   flex-direction: column;   /* h1 arriba, p debajo */
 }
-#vector_tools .smart_text h1{ margin: 0 0 10px 0; }
+
 #vector_tools .smart_text p{ margin: 0; color: #d7d7d7; }
 
 #vector_tools .vector_video{
@@ -446,7 +437,7 @@ section::before{
   margin:0 auto 60px;
   padding: 40px 50px;
   gap:50px;
-  box-sizing: border-box;
+  
 }
 .feature-text {
   flex: 0 0 44%;
@@ -460,9 +451,7 @@ section::before{
   font-weight: 800;
   font-size: 24px;
   line-height: 1.25;
-  color: #1d1d1f;
   margin: 0 0 12px 0;
-  ;
 }
 
 .feature-text p {
@@ -484,10 +473,8 @@ section::before{
 }
 .smart_guides_background{
   position: relative;
-  inset: 0;
   width: 100%;
   height: 100%;
-  border-radius: 14px;
   background-image: url('./imatges/exerciciPixelmator/img_design-guides@2x.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -495,14 +482,7 @@ section::before{
   overflow: hidden;
 }
 
-.smart_guides_card h2 {
-  font-size: clamp(60px, 8vw, 100px);
-  font-weight: 900;
-  line-height: 0.9;
-  margin: 0;
-  z-index: 2;
-  position: relative;
-}
+
 .smart_guides_card p {
   position: absolute;
   bottom: 40px;
@@ -544,11 +524,7 @@ section::before{
   margin-bottom: 20px;
   
 }
-.layer_styles_card h3{
-  font-size: 20px;
-  text-align: left;
 
-}
 .layer_styles_card p {
   font-size: 19px;
   padding: 20px;
@@ -566,9 +542,6 @@ section::before{
   line-height: 1.1;
 }
 
-#machine_learning h1 span {
-  color: #f5b800; /* tono amarillo similar al de Pixelmator */
-}
 
 #machine_learning p {
   color: #333;
@@ -660,12 +633,7 @@ section::before{
   margin-top: 180px; /* separa el párrafo del título */
   margin-bottom: 100px;
 }
-#tipo_tools .text_overlay {
-  color: #111;
-  max-width: 720px;
-  padding: 0 20px;
-  transform: translateY(200px);
-}
+
 
 #tipo_tools h1 {
   font-size: clamp(36px, 4vw, 56px);
@@ -706,7 +674,6 @@ section::before{
   font-size: 20px;
 }
 .type_path_imagen img{
-  flex: 1 1 58%;
   display: block;
   width: 100%;
   max-width: 1100px;
@@ -770,7 +737,6 @@ section::before{
   display: flex;                 /* coloca elementos en fila */
   align-items: flex-start;       /* alinea arriba */
   justify-content: center;       /* centra el conjunto */
-  gap: 0;                     /* espacio entre imagen y cards */
   width: 100%;
   max-width: 1300px;
   margin: 60px auto;
@@ -862,7 +828,6 @@ section::before{
 }
 #mac-exclusive {
   text-align: center;
-  padding: 80px 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
