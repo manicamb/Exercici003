@@ -23,7 +23,6 @@ html, body {
 }
 .header__top{ background:var(--bg); position:relative; align-items: center; width:100%; }
 .header__top-inner{
-  position: relative; /* o simplemente elimina la propiedad position */
   display:flex;
   align-items:center;
   gap:32px;
@@ -195,11 +194,7 @@ section::before{
   width: 500px;
   height: 60px;
 }
-.titulo_design{
-  transform: translateY(0px); /* baja el texto */
-  /* o */
-  margin-bottom: -20px;
-}
+
 
 
 #vector_tools .imagen_draw{
@@ -246,13 +241,12 @@ section::before{
 }
 
 /* Títulos y párrafos a la izquierda */
-#vector_tools .resolution-independent h1,
-#vector_tools .vector_support h1,
 #vector_tools .resolution-independent p,
-#vector_tools .vector_support p{
+#vector_tools .vector_support p {
   text-align: left;
   margin: 0 0 12px 0;
 }
+
 .contenedor_texto{
   max-width: 760px; /* 👈 Ajusta este valor: más pequeño que la imagen */
   margin: 0 auto 40px; /* Centrado con espacio inferior */
@@ -421,31 +415,8 @@ section::before{
   max-width: 100%;
   box-shadow: 0 2px 8px rgba(0,0,0,.25);
 }
-#design_tools .feature-hero{
-  display: flex;
-  align-items: center;
-  gap: 36px;
-  background: #f4f4f4;
-  border-radius: 24px;
-  padding: 40px;
-  max-width: 1100px;
-  margin: 0 auto 28px;
-}
-#design_tools .feature-copy{
-  flex: 1 1 0;
-  text-align: left;
-  color: #111;
-}
-#design_tools .feature-copy h1{
-  font-size: clamp(22px, 2.2vw, 32px);
-  font-weight: 800;
-  margin: 0 0 10px;
-}
-#design_tools .feature-copy p{
-  line-height: 1.7;
-  color: #333;
-  margin: 0;
-}
+
+
 #design_tools .feature-media{
   flex: 1 1 56%;
   line-height: 1.6;
@@ -586,9 +557,7 @@ section::before{
 #machine_learning {
   text-align: center;
   background: #fff;
-  padding: 80px 20px;
-  max-width: 1100px;
-  margin: 0 auto;
+
 }
 
 #machine_learning h1 {
@@ -785,11 +754,7 @@ section::before{
   padding: 20px;
   
 }
-#deffect{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
 .img_effects_izquierda {
   flex: 0 0 55%;                 /* ocupa el 55% del ancho total */
   width: 100%;
@@ -805,11 +770,11 @@ section::before{
   display: flex;                 /* coloca elementos en fila */
   align-items: flex-start;       /* alinea arriba */
   justify-content: center;       /* centra el conjunto */
-  gap: 0px;                     /* espacio entre imagen y cards */
+  gap: 0;                     /* espacio entre imagen y cards */
   width: 100%;
   max-width: 1300px;
   margin: 60px auto;
-  padding: 0px;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -1147,65 +1112,81 @@ section::before{
   line-height: 1.6;
 }
 
-/* responsive */
-@media (max-width: 900px){
-  #site-footer .footer-grid{
-    gap: 12px 24px;
-  }
-  #site-footer section{
-    flex: 1 1 45%;                      /* 2 columnas en tablet */
-  }
-}
-@media (max-width: 560px){
-  #site-footer section{
-    flex: 1 1 100%;                     /* 1 columna en móvil */
-  }
-}
-
-
-
 /* =========================================================
    RESPONSIVE
    ========================================================= */
 
-@media (max-width: 900px){
-  /* Vector Tools */
+/* --- Ajustes móviles (≤900px) --- */
+@media (max-width: 900px) {
+
+  /* ===== FOOTER ===== */
+  #site-footer .footer-grid {
+    gap: 12px 24px;
+  }
+
+  #site-footer section {
+    flex: 1 1 45%; /* 2 columnas en tablet */
+  }
+
+  /* ===== VECTOR TOOLS ===== */
   #vector_tools .resolution-independent,
-  #vector_tools .vector_support{
+  #vector_tools .vector_support {
     flex-basis: 100%;
   }
-  #vector_tools .smart_card{
+
+  #vector_tools .smart_card {
     flex-direction: column;
     align-items: stretch;
   }
-  #vector_tools .vector_video{ max-width: 100%; }
 
-  /* Photo Tools → 1 columna */
-  #photo_tools .features{ column-count: 1; column-gap: 0; }
-}
+  #vector_tools .vector_video {
+    max-width: 100%;
+  }
 
-/* Pequeños ajustes XL */
-@media (min-width: 1400px){
-  .hero_img{ width: 1100px; }  /* evita que crezca infinito */
-}
-@media (max-width: 900px) {
+  /* ===== PHOTO TOOLS ===== */
+  #photo_tools .features {
+    column-count: 1;
+    column-gap: 0;
+  }
+
+  /* ===== TIPO TOOLS ===== */
   #tipo_tools {
     padding-top: 120px;
     background-position: center center;
     height: 90vh;
   }
+
   #tipo_tools h1 {
     font-size: 34px;
   }
+
   #tipo_tools p {
     font-size: 15px;
   }
-}
-@media (max-width: 900px){
-  .type_path_card{
+
+  /* ===== TYPE PATH CARD ===== */
+  .type_path_card {
     flex-direction: column;
     gap: 20px;
-    margin: -40px auto 32px;    /* solapado más suave en pantallas pequeñas */
+    margin: -40px auto 32px; /* solapado más suave en pantallas pequeñas */
   }
-  .type_path_contenido{ max-width: 100%; }
+
+  .type_path_contenido {
+    max-width: 100%;
+  }
 }
+
+/* --- Ajustes móviles pequeños (≤560px) --- */
+@media (max-width: 560px) {
+  #site-footer section {
+    flex: 1 1 100%; /* 1 columna en móvil */
+  }
+}
+
+/* --- Ajustes extra grandes (≥1400px) --- */
+@media (min-width: 1400px) {
+  .hero_img {
+    width: 1100px; /* evita que crezca infinito */
+  }
+}
+
