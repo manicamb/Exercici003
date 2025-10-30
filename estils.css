@@ -1,5 +1,5 @@
 /* =========================================================
-   BASE LIMPIA — Pixelmator Clone
+   BASE 
    ========================================================= */
 
 /* Reset mínimo */
@@ -12,7 +12,7 @@ html, body {
   overflow-x: hidden;       /* bloquea scroll lateral */
 }
 
-/* Variables unificadas */
+/* Variables globales(colores y estilos) */
 :root{
   --text: #111;
   --muted: #646464;
@@ -21,28 +21,35 @@ html, body {
   --buy: #ff5b7f;
   --type_card_green:#22c07a;
 }
+/*=====================================
+              HEADER
+=======================================*/
 .header__top{ background:var(--bg); position:relative;  width:100%; }
+/*CONTENEDOR HEADER CON LOS ENLACES*/
 .header__top-inner{
   display:flex;
   align-items:center;
   gap:32px;
   min-height:54px;
 }
+
+/*SEPARACIÓN HEADER*/
 .header__top-underline{ height:1px; background:var(--hairline); }
+/*iTEMS DEL MENU SUPERIOR*/
 .topmenu__item{ display:inline-flex; align-items:center; gap:8px; color:var(--text); opacity:.92; padding:12px 0; }
 .topmenu__item--active{ font-weight:600; position:relative; }
 .topmenu__item--active::after{
   content:""; position:absolute; left:0; right:0; bottom:-1px; height:2px; border-radius:2px; background:var(--text);
 }
 
-
+/*PART INFERIOR DEL HEADER (STICKY)*/
 .header__nav.sticky{
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 1000; /*SE MANTIENE ARRIBA AL HACER SCROLL*/
 }
 
-
+/*EFECTO VIDRIO*/
 .header__nav.glass{
   background:
     linear-gradient(180deg,
@@ -54,6 +61,7 @@ html, body {
   backdrop-filter: saturate(140%) blur(12px);
 }
 
+/*ESTRUCTURA INTERNA DEL NAV*/
 .header__nav-inner{ display:flex; align-items:center; justify-content:space-between; min-height:56px; }
 .brand{ display:flex; align-items:center; gap:10px; }
 .brand__logo{ width:24px; height:24px; border-radius:6px; }
@@ -61,11 +69,13 @@ html, body {
 .navlinks{ display:flex; gap:24px; }
 .navlinks__item{ color:var(--text); opacity:.92; }
 .navlinks__item--muted{ color:var(--muted); }
+
+/*BOTON COMPRA*/
 .btn{ display:inline-flex; align-items:center; gap:8px; padding:8px 14px; border-radius:999px; font-weight:600; }
 .btn--buy{ background: var(--buy); color:#fff; border: none; }
 
 
-/* Base tipográfica */
+/* Base y estructura general */
 body{
   background: var(--bg);
   color: var(--text);
@@ -73,13 +83,14 @@ body{
   font-size: 16px;
   line-height: 1.45;
 }
+/*Contenedor para centrar el contenido*/
 .container{
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* Sección base (contenido centrado/limitado) */
+/* Sección con padding y centradas */
 section{
   position: relative;
   padding: 80px 20px;
@@ -87,7 +98,7 @@ section{
   margin: 0 auto;
 }
 
-/* Fondo full-bleed: el color de la sección se estira a 100vw */
+/*FONDO EXTENDIDO PARA SECCIONES CON COLOR */
 section::before{
   content: "";
   position: absolute;
@@ -101,17 +112,15 @@ section::before{
 /* =========================================================
    HERO
    ========================================================= */
-
+/*SECCION INICAL  CON TITULO E IMAGEN CENTRADA*/
 #hero{
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 18px;
-  /* Si tu imagen tiene off-white en las esquinas, puedes usar:
-     background: #f5f5f7; */
 }
-
+/*RREGLA PARA TITULOS GRANDES*/
 #hero h1,
 #design_tools h1,
 #machine_learning h1,
@@ -123,7 +132,7 @@ section::before{
   font-size: clamp(28px, 4vw, 56px);
   line-height: 1.1;
 }
-
+/*TEXTO DEBJO DEL TITULO*/
 #hero p{
   max-width: 760px;
   margin: 0 auto;
@@ -168,7 +177,7 @@ section::before{
   background: #0a0a0a;     /* negro a todo lo ancho (full-bleed por ::before) */
   color: #fff;
 }
-
+/*TEXTOS BLANCOS EN SECCCIONES OSCURAS*/
 #vector_tools p,
 #photo_tools h1,
 #photo_tools p,
@@ -178,6 +187,7 @@ section::before{
   text-align: center;
   
 }
+/*TITULOS GRANDES EN SECCIONES OSCURAS*/
 #vector_tools h1,
 #photo_tools h1,
 #mac-technologies h1,
@@ -195,17 +205,14 @@ section::before{
 }
 
 
-
+/*IMAGEN DEL BLOQUE VECTOR TOOLS*/
 #vector_tools .imagen_draw{
   display: block;
   width: min(95%,1100px);  /* controla tamaño del hero */
   height: auto;
   border-radius: 14px;
 }
-/* 
-   VECTOR TOOLS — 2 tarjetas arriba + 1 full width abajo (Flex)
-   */
-
+/*CONTENEDOR FLEX CON TARJETAS*/
 #vector_tools .box{
   max-width: 75%;
   margin: 0 auto;
@@ -213,6 +220,7 @@ section::before{
   flex-wrap: wrap;
   gap: 18px;                /* espacio entre cards */
 }
+/*IMAGEN SECUNDARIA BLOQUE VECTOR TOOLS*/
 #photo_tools .imagen_powerfull {
   display: block;
   margin: 40px auto;
@@ -221,7 +229,7 @@ section::before{
 }
 
 
-/* Cards superiores */
+/* ======CARDS SUPERIORES ============ */
 #vector_tools .resolution-independent,
 #vector_tools .vector_support{
   flex: 1 1 calc(50% - 9px);
@@ -234,7 +242,7 @@ section::before{
   color: #fff;
 }
 
-/* Títulos y párrafos a la izquierda */
+/*párrafos a la izquierda */
 #vector_tools .resolution-independent p,
 #vector_tools .vector_support p {
   text-align: left;
@@ -242,8 +250,8 @@ section::before{
 }
 
 .contenedor_texto{
-  max-width: 760px; /* 👈 Ajusta este valor: más pequeño que la imagen */
-  margin: 0 auto 40px; /* Centrado con espacio inferior */
+  max-width: 760px; 
+  margin: 0 auto 40px; 
   text-align: center;
 }
 /* Imagen izquierda full-bleed (toca bordes de la card) */
@@ -269,7 +277,7 @@ section::before{
   align-self: flex-start;
 }
 
-/* Card inferior full width (Smart Shapes) */
+/* Card inferior(Smart Shapes) */
 #vector_tools .smart_card{
   flex: 1 0 100%;
   display: flex;
@@ -280,13 +288,14 @@ section::before{
   padding: 24px;
   color: #fff;
 }
+/*TEXTO TARJETA INFERIOR*/
 #vector_tools .smart_text{
   display: flex;
   flex-direction: column;   /* h1 arriba, p debajo */
 }
 
 #vector_tools .smart_text p{ margin: 0; color: #d7d7d7; }
-
+/*VIDEO A LA DERECHA*/
 #vector_tools .vector_video{
   display: block;
   max-width: 50%;
@@ -301,7 +310,7 @@ section::before{
 /* =========================================================
    PHOTO TOOLS — 2 columnas (3/2), izquierda alineada
    ========================================================= */
-
+/*contenedor  de columnas*/
 #photo_tools .features {
   width: auto;
   max-width: 900px;
@@ -310,7 +319,7 @@ section::before{
   column-gap: 56px;
 }
 
-/* ===== Cada item (feat) ===== */
+/* ===== Cada item (feat) dentro de las columnas ===== */
 #photo_tools .feat {
   display: inline-block;
   width: 100%;
@@ -319,7 +328,7 @@ section::before{
   break-inside: avoid;
   text-align: left;
 }
-
+/*Iconos de las caracteristicas*/
 #photo_tools .feat__icon {
   display: block;
   width: 44px;
@@ -401,13 +410,14 @@ section::before{
   text-decoration: none;
   transition: color .25s ease, transform .25s ease;
 }
+/*IMAGEN ANCHA DEBAJO DEL TITULO*/
 .imagen_everything{
   width: 100%;
   max-width: 100%;
   box-shadow: 0 2px 8px rgba(0,0,0,.25);
 }
 
-
+/*MEDIA DE LA CARD LAYER BASED*/
 #design_tools .feature-media{
   flex: 1 1 56%;
   line-height: 1.6;
@@ -418,6 +428,7 @@ section::before{
   max-width: 600px;
   height: auto;
 }
+/*TAREJTAS JUNTAS(SAMRT-GUIDES +LAYER STYLES)*/
 .design_cards{
   display: flex;
   justify-content: center;
@@ -426,6 +437,7 @@ section::before{
   margin: 60px auto;
   max-width: 1100px;
 }
+/*BLOQUE DESTACADO (FONDO GRIS Y BORDES REDOENDEADOS)*/
 .feature-block {
   width: 100%;
   max-width: 1100px;
@@ -460,7 +472,7 @@ section::before{
   font-size: 16px;
   margin: 30px auto;
 }
-
+/*CARD CON IMAGENES DE FONDO Y TEXTO SUPERPUESTO*/
 .smart_guides_card {
   background-color: #2f434a;
   position: relative;
@@ -471,6 +483,8 @@ section::before{
   padding-left:50px;
   padding-top: 10px;
 }
+
+/*FONDO COVER DE LA CARD*/
 .smart_guides_background{
   position: relative;
   width: 100%;
@@ -482,7 +496,7 @@ section::before{
   overflow: hidden;
 }
 
-
+/*TEXTO SUPERPUESTO DENTRO DE LAS CARDS*/
 .smart_guides_card p {
   position: absolute;
   bottom: 40px;
