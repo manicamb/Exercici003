@@ -1097,6 +1097,25 @@ section::before{
 
 /* --- Ajustes móviles (≤900px) --- */
 @media (max-width: 900px) {
+  #design_tools{
+    text-align: center;
+  }
+  .feature-block{
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 20px;
+    gap: 24px;
+  }
+
+  .feature-text{
+    flex: 0 0 auto;
+    max-width: 100%;
+    padding-left: 0;
+    text-align: left;
+  }
+  #design_tools .feature-media{
+    max-width: 100%;
+  }
 
   /* ===== FOOTER ===== */
   #site-footer .footer-grid {
