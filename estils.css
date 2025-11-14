@@ -1113,18 +1113,51 @@ section::before{
     padding-left: 0;
     text-align: left;
   }
+  .design_cards{
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+    max-width: 100%;
+  }
+
+  .smart_guides_card{
+    padding: 20px;
+  }
+
+  .smart_guides_background{
+    height: 220px;
+    border-radius: 16px;
+  }
+
+  .smart_guides_card{
+    position: static;
+    max-width: 100%;
+    font-size: 15px;
+    line-height: 16px;
+  }
+
+  .layer_styles_card{
+    padding: 16px;
+    font-size: 16px;
+  }
   #design_tools .feature-media{
     max-width: 100%;
   }
 
   /* ===== FOOTER ===== */
+   /* ==== FOOTER en móvil: 1 columna ==== */
   #site-footer .footer-grid {
-    gap: 12px 24px;
+    flex-direction: column;   
+    align-items: flex-start;
+    gap: 24px;
+    padding: 32px 20px 20px;
   }
 
   #site-footer section {
-    flex: 1 1 45%; /* 2 columnas en tablet */
+    flex: 1 1 100%;
+    min-width: 0;             
   }
+
 
   /* ===== VECTOR TOOLS ===== */
   #vector_tools .resolution-independent,
@@ -1172,13 +1205,93 @@ section::before{
   .type_path_contenido {
     max-width: 100%;
   }
+  /* === SMART GUIDES — FIX RESPONSIVE === */
+.smart_guides_card {
+  width: 100%;
+  height: auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
-/* --- Ajustes móviles pequeños (≤560px) --- */
-@media (max-width: 560px) {
-  #site-footer section {
-    flex: 1 1 100%; /* 1 columna en móvil */
-  }
+.smart_guides_background {
+  height: 220px;
+  background-position: center;
+}
+
+
+.smart_guides_text,
+.smart_guides_card p {
+  position: static !important;
+  top: auto;
+  bottom: auto;
+  left: auto;
+  right: auto;
+  margin: 16px 0;
+  padding: 0 20px;
+  width: 100%;
+  max-width: none;
+  color: #d6e0e3;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.smart_guides_text {
+  height: auto;
+}
+.layer_styles_card{
+  width: 100%;
+  height: auto;
+  padding: 20px 18px;
+  align-items: flex-start;
+  text-align: left;
+}
+.layer_styles_card img{
+  width: 100%;
+  max-width: 100%;
+  border-radius: 16px;
+  margin-bottom: 16px;
+}
+.layer_styles_card p{
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 0%;
+}
+/* === EFFECTS – Over 60 Effects / Effects Browser (móvil) === */
+.disposicio_cards {
+  flex-direction: column;       
+  align-items: center;
+  margin: 40px auto;
+  gap: 24px;
+}
+
+.img_effects_izquierda {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 16px;
+  margin: 0 auto;
+}
+
+.cards_effects {
+  flex: 0 0 auto;
+  width: 100%;
+  align-items: stretch;
+}
+
+
+.effects_card--white,
+.effects_card--pink {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+
+.effects_card--pink h1 {
+  font-size: 24px;
+  margin-top: 0;
+}
+ 
 }
 
 /* --- Ajustes extra grandes (≥1400px) --- */
