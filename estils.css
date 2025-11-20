@@ -63,10 +63,11 @@ html, body {
 
 /*ESTRUCTURA INTERNA DEL NAV*/
 .header__nav-inner{ display:flex; align-items:center; justify-content:space-between; min-height:56px; }
+
 .brand{ display:flex; align-items:center; gap:10px; }
 .brand__logo{ width:24px; height:24px; border-radius:6px; }
 .brand__name{ font-weight:700; }
-.navlinks{ display:flex; gap:24px; }
+.navlinks a{ display:column; gap:10px; text-decoration: none;}
 .navlinks__item{ color:var(--text); opacity:.92; }
 .navlinks__item--muted{ color:var(--muted); }
 
