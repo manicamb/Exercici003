@@ -631,13 +631,13 @@ section::before{
   height: 100vh; /* ocupa toda la ventana */
   background-image: url('./imatges/exerciciPixelmator/img_text@2x.jpg');
   background-size: cover;      /* llena el espacio */
-  background-position: center top; /* ajusta según necesites */
+  background-position: center top; 
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* texto arriba */
   align-items: center;
-  padding-top: 280px; /* baja un poco el texto */
+  padding-top: 280px; 
   text-align: center;
 }
 .titulo_design{transform: translateY(20px);}
@@ -1062,7 +1062,7 @@ section::before{
 
 #site-footer section{
   min-width: 200px;
-  flex: 1 1 220px;                      /* 4 cols en desktop, se adapta en tablet */
+  flex: 1 1 220px;                  /* 4 cols en desktop, se adapta en tablet */
 }
 
 #site-footer h4{
@@ -1347,7 +1347,7 @@ section::before{
 
 @media (min-width: 1400px) {
   .hero_img {
-    width: 1100px; /* evita que crezca infinito */
+    width: 1100px; 
   }
 }
 
